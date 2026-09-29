@@ -1,0 +1,48 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens. Anything declared in @theme becomes both a CSS variable
+ * and a Tailwind utility (e.g. --color-brand -> bg-brand, text-brand).
+ */
+@theme {
+  /* Colors */
+  --color-brand: #2f5d50;
+  --color-brand-dark: #1f3f36;
+  --color-brand-light: #e6efe9;
+  --color-accent: #d98c5f;
+  --color-ink: #1c1c1c;
+  --color-muted: #5f6368;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f5f2;
+  --color-border: #e4e1dc;
+
+  /* Typography */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+  /* Radii */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.04), 0 8px 24px rgb(0 0 0 / 0.06);
+
+  /* Layout */
+  --container-content: 72rem;
+}
+
+@layer base {
+  html {
+    @apply bg-surface text-ink font-sans antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display text-balance;
+  }
+
+  a {
+    @apply text-brand underline-offset-4 hover:underline;
+  }
+}
